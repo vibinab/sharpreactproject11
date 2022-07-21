@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
 import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
+// import CourseInput1 from './components/CourseGoals/CourseInput/Courseinput1';
 import './App.css';
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
     <div>
       <section id="goal-form">
         <CourseInput onAddGoal={addGoalHandler} />
+        {/* <CourseInput1 onAddGoal={addGoalHandler}/> */}
       </section>
       <section id="goals">
         {content}

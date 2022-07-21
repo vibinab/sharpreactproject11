@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import Button from '../../UI/Button/Button';
-import './CourseInput.css';
+import './Courseinput1.css';
 
-const CourseInput = props => {
+const CourseInput1 = props => {
   const [enteredValue, setEnteredValue] = useState('');
 
   const[ IsValid, setIsValid]= useState(true) 
@@ -15,10 +15,6 @@ const CourseInput = props => {
       setIsValid(true)
       settype(true)
 
-    }
-
-    if(event.target.value.trim().length==0){
-         settype(false)
     }
     setEnteredValue(event.target.value);
   };
@@ -37,14 +33,18 @@ const CourseInput = props => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className={`form-control ${!IsValid?'invalid':''}`}>
-        <label>Course Goal</label>
-        <input type="text" onChange={goalInputChangeHandler} />
+      <div className="form-control">
+        <label style={{color:!IsValid?'red':'black'}}>Course Goal</label>
+        <input type="text" style={{
+          borderColor:!IsValid?'red':'black',
+          background:!IsValid?'salmon':'transparent'
+          }} 
+          onChange={goalInputChangeHandler} />
       </div>
       {/* <Button style={{background:!IsValid?'green':'red'}} type="submit">Add Goal</Button> */}
-      <button style={{background:!type?'red':'green'}} type="submit">Add Goal</button>
+      <button style={{background:!type?'red':'yellow'}} type="submit">Add Goal</button>
     </form>
   );
 };
 
-export default CourseInput;
+export default CourseInput1;
